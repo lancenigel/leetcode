@@ -11,3 +11,5 @@ class Solution:
                 l += 1
             else:
                 return [l + 1, r + 1]
+
+    # make sure ot remember how the order of cur_sum and target > <
