@@ -13,3 +13,6 @@ class Solution:
             slow2 = nums[slow2]
             if slow == slow2:
                 return slow
+
+
+# make sure you understand the iteration through linked lists
