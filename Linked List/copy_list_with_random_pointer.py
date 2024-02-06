@@ -9,18 +9,22 @@ class Node:
 
 
 class Solution:
-    def copyRandomList(self, head: "Node") -> "Node":
-        oldToCopy = {None: None}
+    def copyRandomList(self, head: "Optional[Node]") -> "Optional[Node]":
+        copyMap = {None: None}
+
+        cur = head
+
+        while cur:
+            copy = ListNode(cur.val)
+            copyMap[cur] = copy
+            cur = cur.next
 
         cur = head
         while cur:
-            copy = Node(cur.val)
-            oldToCopy[cur] = copy
+            copy = copyMap[cur]
+            copy.next = copyMap[cur.next]
+            copy.random = copyMap[cur.random]
+
             cur = cur.next
-        cur = head
-        while cur:
-            copy = oldToCopy[cur]
-            copy.next = oldToCopy[cur.next]
-            copy.random = oldToCopy[cur.random]
-            cur = cur.next
-        return oldToCopy[head]
+
+        return copyMap[head]
