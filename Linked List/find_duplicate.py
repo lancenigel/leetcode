@@ -16,3 +16,16 @@ class Solution:
 
 
 # make sure you understand the iteration through linked lists
+
+
+class Solution:
+    def findDuplicate(self, nums: List[int]) -> int:
+        seen = set()
+
+        for n in nums:
+            if n in seen:
+                return n
+            seen.add(n)
+
+
+# this is a solution for list, pretty nice that i got it easily!
