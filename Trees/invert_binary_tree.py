@@ -5,13 +5,8 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
 
-        root.right, root.left = root.left, root.right
-
-        self.invertTree(root.left)
-        self.invertTree(root.right)
-
-        return root
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
