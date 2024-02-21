@@ -14,9 +14,9 @@ class Solution:
         curr = root
 
         while curr:
-            if p.val > cur.val and q.val > cur.val:
-                curr = cur.right
-            elif p.val < cur.val and q.val < cur.val:
-                curr = cur.left
+            if p.val > curr.val and q.val > curr.val:
+                curr = curr.right
+            elif p.val < curr.val and q.val < curr.val:
+                curr = curr.left
             else:
-                return cur
+                return curr
