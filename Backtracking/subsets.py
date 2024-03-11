@@ -21,3 +21,8 @@ class Solution:
 
         dfs(0)
         return res
+
+
+# .copy() is a shallow copy, this makes a 1 layer deep copy of an array which is suitable for single dimension arrays but not for
+# multiple levels
+# deep copy is for multiple dimension arrays
